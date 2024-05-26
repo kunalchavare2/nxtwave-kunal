@@ -53,7 +53,7 @@ const SignUpForm = () => {
 
     methods.reset();
 
-    navigate("/login", { replace: true });
+    navigate("/auth/login", { replace: true });
   });
   return (
     <FormProvider {...methods}>
