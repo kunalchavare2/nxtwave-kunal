@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import AddResource from "./pages/AddResource/AddResource";
 import Resources from "./components/Organisams/Resources/Resources";
@@ -9,6 +9,7 @@ import Layout from "./Layout/RootLayout/Layout";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import GuardedRoute from "./HOC/GuardedRoute/GuardedRoute";
+import { ToastContainer } from "react-toastify";
 
 const routes = [
   {
@@ -17,7 +18,7 @@ const routes = [
     children: [
       {
         path: "/",
-        element: <Navigate to="/login" />,
+        element: <Navigate to="/auth/login" />,
       },
       {
         path: "/home",
@@ -50,16 +51,32 @@ const routes = [
         path: "/add-resource",
         element: <AddResource />,
       },
+      {
+        path: "/auth",
+        element: (
+          <div>
+            <Outlet />
+            <ToastContainer position="bottom-center" theme="colored" />
+          </div>
+        ),
+        children: [
+          {
+            path: "/auth",
+            element: <Navigate to="/auth/login" />,
+          },
+          {
+            path: "login",
+            element: <LoginPage />,
+          },
+          {
+            path: "signup",
+            element: <SignUpPage />,
+          },
+        ],
+      },
     ],
   },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "/signup",
-    element: <SignUpPage />,
-  },
+
   {
     path: "*",
     element: <NotFoundPage />,

@@ -6,7 +6,7 @@ import { Navigate } from "react-router-dom";
 const GuardedRoute = ({ children }) => {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
 
-  if (!isAuth) return <Navigate to="/login" replace={true} />;
+  if (!isAuth) return <Navigate to="/auth/login" replace={true} />;
 
   return children;
 };

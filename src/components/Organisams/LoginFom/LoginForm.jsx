@@ -73,7 +73,7 @@ const LoginForm = () => {
         <LoginFormFooter>
           <div className="footer-top">
             <span>Don't have an account? </span>
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/auth/signup">Sign Up</Link>
           </div>
           <div className="footer-bottom">
             <Link to="/reset-password">Forget your Password</Link>

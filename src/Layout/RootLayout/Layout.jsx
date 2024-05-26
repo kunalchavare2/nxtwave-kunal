@@ -1,5 +1,5 @@
 import React from "react";
-import {  Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import GlobalStyles from "../../styles/globalstyles";
 import Header from "../../components/Molecules/Header/Header";
 import { LayoutStyle, OutletStyle } from "./Layout.styled";

@@ -44,7 +44,7 @@ const Header = () => {
               setOpen={setOpen}
               callback={() => {
                 dispatch(logout());
-                navigate("/login");
+                navigate("/auth/login");
               }}
             />
           </Avatar>

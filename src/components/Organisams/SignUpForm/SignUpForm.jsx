@@ -95,7 +95,7 @@ const SignUpForm = () => {
         <SignUpFormFooter>
           <div className="footer-top">
             <span>Already have an account? </span>
-            <Link to="/login">Log In</Link>
+            <Link to="/auth/login">Log In</Link>
           </div>
         </SignUpFormFooter>
       </SignUpFormWrapper>
